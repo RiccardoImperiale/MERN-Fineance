@@ -1,12 +1,12 @@
 import express from 'express'
-import FinancialRecordModel from '../schema/financialRecord'
+import ExpenseModel from '../models/Expense.js'
 
 const router = express.Router();
 
 router.get("/getAllByUserId/:userId", async (req, res) => {
     try {
         const userId = req.params.userId
-        const records = await FinancialRecordModel.find({ userId: userId })
+        const records = await ExpenseModel.find({ userId: userId })
         if (records.length === 0) {
             return res.status(404).send("no records found for the user")
         }
@@ -19,7 +19,7 @@ router.get("/getAllByUserId/:userId", async (req, res) => {
 router.post("/", async (req, res) => {
     try {
         const newRecordBody = req.body
-        const newRecord = new FinancialRecordModel(newRecordBody)
+        const newRecord = new ExpenseModel(newRecordBody)
         const savedRecord = await newRecord.save()
 
         res.status(200).send(savedRecord);
@@ -32,7 +32,7 @@ router.put("/:id", async (req, res) => {
     try {
         const id = req.params.id;
         const newRecordBody = req.body
-        const record = await FinancialRecordModel.findByIdAndUpdate(id, newRecordBody)
+        const record = await ExpenseModel.findByIdAndUpdate(id, newRecordBody)
         if (!record) {
             return res.status(404).send()
         }
@@ -46,7 +46,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
     try {
         const id = req.params.id;
-        const record = await FinancialRecordModel.findByIdAndDelete(id)
+        const record = await ExpenseModel.findByIdAndDelete(id)
         if (!record) {
             return res.status(404).send()
         }

@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import financialRecordRouter from './routes/financialRecords'
+import financialRecordRouter from './routes/expenses.js';
 import dotenv from 'dotenv';
 
 dotenv.config();

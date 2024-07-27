@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const financialRecordSchema = new mongoose.Schema({
+const ExpenseSchema = new mongoose.Schema({
     userId: {
         type: String,
         required: true,
@@ -29,6 +29,6 @@ const financialRecordSchema = new mongoose.Schema({
     timestamps: true, // Automatically adds createdAt and updatedAt fields
 });
 
-const FinancialRecord = mongoose.model('FinancialRecord', financialRecordSchema);
+const ExpenseModel = mongoose.model('Expense', ExpenseSchema);
 
-export default FinancialRecord;
+export default ExpenseModel;

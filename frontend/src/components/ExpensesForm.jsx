@@ -1,12 +1,15 @@
 import "../assets/css/financial_form.css"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useUser } from "@clerk/clerk-react"
+import { useExpenses } from "../contexts/expensesContext"
 
 export default function FinancialForm() {
     const [title, setTitle] = useState("")
     const [amount, setAmount] = useState("")
     const [category, setCategory] = useState("")
     const [payment, setPayment] = useState("")
+    const { addExpense } = useExpenses()
+
     const { user } = useUser()
 
     const handleSubmit = (e) => {
@@ -20,6 +23,8 @@ export default function FinancialForm() {
             category,
             payment
         }
+
+        addExpense(newRecord)
 
         setTitle("")
         setAmount("")
