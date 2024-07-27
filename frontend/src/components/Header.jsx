@@ -9,6 +9,7 @@ export default function Header() {
                 <div className="nav_links">
                     <ul>
                         <li><NavLink to="/" >Dashboard</NavLink></li>
+                        <li><NavLink to="/expenses" >Expenses</NavLink></li>
                     </ul>
                 </div>
                 <div className="sign_in">

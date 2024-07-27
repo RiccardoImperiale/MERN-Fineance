@@ -2,7 +2,6 @@ import { useUser } from "@clerk/clerk-react";
 import { createContext, useContext, useEffect, useState } from "react";
 export const ExpensesContext = createContext(null)
 
-
 export const ExpensesProvider = ({ children }) => {
     const [expenses, setExpenses] = useState([])
     const { user } = useUser()
