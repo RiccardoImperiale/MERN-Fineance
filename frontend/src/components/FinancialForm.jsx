@@ -21,7 +21,10 @@ export default function FinancialForm() {
             payment
         }
 
-        console.log(newRecord);
+        setTitle("")
+        setAmount("")
+        setCategory("")
+        setPayment("")
     }
 
     return (
