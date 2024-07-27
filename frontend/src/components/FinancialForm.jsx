@@ -1,22 +1,45 @@
 import "../assets/css/financial_form.css"
+import { useState } from "react"
+import { useUser } from "@clerk/clerk-react"
 
 export default function FinancialForm() {
+    const [title, setTitle] = useState("")
+    const [amount, setAmount] = useState("")
+    const [category, setCategory] = useState("")
+    const [payment, setPayment] = useState("")
+    const { user } = useUser()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const newRecord = {
+            userId: user?.id,
+            date: new Date(),
+            title,
+            amount: Number(amount),
+            category,
+            payment
+        }
+
+        console.log(newRecord);
+    }
+
     return (
-        <form >
+        <form onSubmit={handleSubmit}>
             {/* TITLE */}
             <div className="input_group">
                 <label htmlFor="title">Title</label>
-                <input type="text" id="title" name="title" />
+                <input type="text" id="title" name="title" required onChange={(e) => setTitle(e.target.value)} value={title} />
             </div>
             {/* AMOUNT */}
             <div className="input_group">
                 <label htmlFor="amount">amount</label>
-                <input type="number" id="amount" name="amount" />
+                <input type="number" id="amount" name="amount" required onChange={(e) => setAmount(e.target.value)} value={amount} />
             </div>
             {/* CATEGORY */}
             <div className="input_group">
                 <label htmlFor="category">category</label>
-                <select className="input" id="category" name="category">
+                <select className="input" id="category" name="category" required onChange={(e) => setCategory(e.target.value)} value={category}>
                     <option value="">Select a Category</option>
                     <option value="Food">Food</option>
                     <option value="Rent">Rent</option>
@@ -29,7 +52,7 @@ export default function FinancialForm() {
             {/* PAYMENT */}
             <div className="input_group">
                 <label htmlFor="payment">Payment Method:</label>
-                <select className="input" id="payment" name="payment">
+                <select className="input" id="payment" name="payment" required onChange={(e) => setPayment(e.target.value)} value={payment}>
                     <option value="">Select a Payment Method</option>
                     <option value="Credit Card">Credit Card</option>
                     <option value="Cash">Cash</option>
