@@ -1,0 +1,24 @@
+.welcome {
+    height: calc(100vh - 4rem);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+
+    h1 {
+        text-align: center;
+        font-weight: 100;
+        font-size: 3rem;
+    }
+
+    span {
+        font-weight: 500;
+    }
+
+    .actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+}

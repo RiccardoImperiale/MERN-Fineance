@@ -1,10 +1,26 @@
 header {
     background-color: rebeccapurple;
-    padding: 1rem 0;
 
     nav {
+        height: 4rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .nav_links {
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 1.6rem;
+                list-style: none;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+        }
     }
 }
