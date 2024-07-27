@@ -8,7 +8,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<LayoutAuth />}>
         <Route index element={<Dashboard />} />
-        <Route path="/auth" element={<Auth />} />
+        {/* <Route path="/auth" element={<Auth />} /> */}
       </Route>
     )
   );

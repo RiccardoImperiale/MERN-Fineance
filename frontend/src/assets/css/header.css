@@ -1,0 +1,10 @@
+header {
+    background-color: rebeccapurple;
+    padding: 1rem 0;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
