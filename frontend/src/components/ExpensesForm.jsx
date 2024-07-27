@@ -1,5 +1,5 @@
 import "../assets/css/financial_form.css"
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { useUser } from "@clerk/clerk-react"
 import { useExpenses } from "../contexts/expensesContext"
 
@@ -17,7 +17,6 @@ export default function FinancialForm() {
 
         const newRecord = {
             userId: user?.id,
-            date: new Date(),
             title,
             amount: Number(amount),
             category,
