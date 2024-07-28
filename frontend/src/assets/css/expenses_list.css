@@ -5,9 +5,10 @@
     .expense {
         display: flex;
         align-items: center;
+        position: relative;
 
         .image {
-            width: 60px;
+            min-width: 60px;
             height: 60px;
             display: flex;
             align-items: center;
@@ -21,7 +22,6 @@
             padding-left: 2rem;
             display: flex;
             justify-content: space-between;
-            flex-grow: 1;
             border-bottom: 1px solid white;
 
             h4 {
@@ -29,20 +29,69 @@
                 color: var(--fin-secondary);
             }
 
-            /* .left {
-
-            } */
 
             .right {
-                text-align: end;
+
+                input,
+                select {
+                    text-align: end;
+                }
             }
-
-
         }
-
     }
 
     .expense:last-child .text {
         border-bottom: none;
+    }
+
+    input,
+    select {
+        background-color: transparent;
+        display: block;
+        border: none;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    input {
+        color: white;
+        font-weight: 600;
+        font-size: 1.5rem;
+        caret-color: var(--fin-accent);
+        /* width: fit-content; */
+    }
+
+    select {
+        color: var(--fin-secondary);
+        font-size: 1.2rem;
+        appearance: none;
+        margin-top: .3rem;
+        cursor: pointer;
+    }
+
+    .amount_input {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        span {
+            font-size: 1.4rem;
+            color: var(--fin-accent);
+        }
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .bin_icon {
+        position: absolute;
+        right: -3.7rem;
+        cursor: pointer;
     }
 }

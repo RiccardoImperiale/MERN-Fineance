@@ -13,17 +13,15 @@ export const ExpensesProvider = ({ children }) => {
 
         if (res.ok) {
             const allExpenses = await res.json()
-            console.log(allExpenses);
             setExpenses(allExpenses)
         }
     }
 
     useEffect(() => {
         fetchExpenses()
-    }, [])
+    }, [user])
 
     const addExpense = async (expense) => {
-
         const res = await fetch("http://localhost:3000/expenses", {
             method: "POST",
             body: JSON.stringify(expense),
@@ -40,8 +38,45 @@ export const ExpensesProvider = ({ children }) => {
             console.log(err);
         }
     }
+
+    const updateExpense = async (updatedExpense) => {
+        const res = await fetch(`http://localhost:3000/expenses/${updatedExpense._id}`, {
+            method: "PUT",
+            body: JSON.stringify(updatedExpense),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        try {
+            if (res.ok) {
+                const updatedExpenses = expenses.map(exp =>
+                    exp._id === updatedExpense._id ? updatedExpense : exp
+                );
+                setExpenses(updatedExpenses);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const deleteExpense = async (id) => {
+        const res = await fetch(`http://localhost:3000/expenses/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        try {
+            if (res.ok) {
+                setExpenses(expenses.filter(exp => exp._id !== id));
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
-        <ExpensesContext.Provider value={{ expenses, addExpense }}>
+        <ExpensesContext.Provider value={{ expenses, addExpense, updateExpense, deleteExpense }}>
             {children}
         </ExpensesContext.Provider>
     )

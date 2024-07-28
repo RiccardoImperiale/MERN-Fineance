@@ -1,10 +1,8 @@
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 import { ExpensesProvider } from "./contexts/expensesContext";
 import LayoutAuth from "./layouts/LayoutAuth";
-// import WelcomePage from "./pages/WelcomePage";
 import NotFound from "./pages/NotFound";
 import HomePage from "./pages/HomePage";
-import ExpensePage from "./pages/ExpensesPage";
 import AddExpensePage from "./pages/AddExpensePage";
 
 function App() {
