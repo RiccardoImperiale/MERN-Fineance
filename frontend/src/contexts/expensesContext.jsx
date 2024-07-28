@@ -20,7 +20,7 @@ export const ExpensesProvider = ({ children }) => {
 
     useEffect(() => {
         fetchExpenses()
-    }, [user])
+    }, [])
 
     const addExpense = async (expense) => {
 

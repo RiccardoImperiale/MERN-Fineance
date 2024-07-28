@@ -4,15 +4,15 @@ import LayoutAuth from "./layouts/LayoutAuth";
 // import WelcomePage from "./pages/WelcomePage";
 import NotFound from "./pages/NotFound";
 import HomePage from "./pages/HomePage";
-import ExpensePage from "./pages/ExpensePage";
+import ExpensePage from "./pages/ExpensesPage";
+import AddExpensePage from "./pages/AddExpensePage";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<LayoutAuth />}>
         <Route index element={<ExpensesProvider><HomePage /></ExpensesProvider>} />
-        <Route path="/expenses" element={<ExpensesProvider><ExpensePage /></ExpensesProvider>} />
-        {/* <Route path="/welcome" element={< WelcomePage />} /> */}
+        <Route path="/new" element={<ExpensesProvider><AddExpensePage /></ExpensesProvider>} />
         <Route path="*" element={<NotFound />} />
       </Route>
     )

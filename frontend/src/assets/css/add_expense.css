@@ -1,0 +1,36 @@
+.add_expense {
+    min-height: 100vh;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        display: flex;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        color: black;
+        color: white;
+    }
+
+    .left {
+        padding-top: 12rem;
+        width: 40%;
+        height: 100%;
+    }
+
+    .right {
+        /* width: 50%; */
+        transform: translate(200px, 30px);
+        height: 100%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            /* width: 100%; */
+        }
+    }
+}

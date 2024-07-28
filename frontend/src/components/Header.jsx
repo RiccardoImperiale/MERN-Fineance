@@ -1,8 +1,9 @@
 import "../assets/css/header.css"
-import { SignedIn, UserButton } from "@clerk/clerk-react"
+import { SignedIn, UserButton, useUser } from "@clerk/clerk-react"
 import { NavLink } from 'react-router-dom';
 
 export default function Header() {
+    const { user } = useUser()
     return (
         <header>
             <nav className="container">
@@ -10,12 +11,13 @@ export default function Header() {
                     <NavLink to='/'>
                         <img src="/img/logo.png" alt="logo" />
                     </NavLink>
-                    <div className="nav_links">
-                        <ul>
-                            <li><NavLink to="/" >Dashboard</NavLink></li>
-                            <li><NavLink to="/expenses" >Expenses</NavLink></li>
-                        </ul>
-                    </div>
+                    {user && (
+                        <div className="nav_links">
+                            <ul>
+                                <li><NavLink to="/new" >Add Expense</NavLink></li>
+                            </ul>
+                        </div>
+                    )}
                 </div>
                 <div className="sign_in">
                     <SignedIn>

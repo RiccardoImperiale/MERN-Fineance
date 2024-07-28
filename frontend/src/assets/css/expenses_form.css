@@ -1,0 +1,64 @@
+form {
+    padding: 2rem 0;
+
+    .input_group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 1.8rem;
+            font-weight: 600;
+            padding-top: 3rem;
+        }
+
+        input,
+        select {
+            padding: 1.5rem 0;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid white;
+            color: var(--fin-secondary);
+            font-weight: 700;
+            font-size: 1.25rem;
+            caret-color: var(--fin-accent);
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input::placeholder {
+            color: black;
+            font-weight: 400;
+        }
+
+        .opt-selected {
+            color: var(--fin-secondary);
+            font-weight: 700;
+        }
+
+        .opt-not-selected {
+            color: black;
+            font-weight: 400;
+        }
+    }
+
+    .action {
+        width: 100%;
+        /* text-align: end; */
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 5rem;
+            background-color: var(--fin-accent);
+            background-color: black;
+            color: white;
+
+            span {
+                padding-right: .5rem;
+            }
+        }
+    }
+}
