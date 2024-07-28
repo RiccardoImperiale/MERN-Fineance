@@ -7,8 +7,9 @@ export default function Header() {
         <header>
             <nav className="container">
                 <div className="left">
-
-                    <img src="/img/logo.png" alt="" />
+                    <NavLink to='/'>
+                        <img src="/img/logo.png" alt="logo" />
+                    </NavLink>
                     <div className="nav_links">
                         <ul>
                             <li><NavLink to="/" >Dashboard</NavLink></li>
