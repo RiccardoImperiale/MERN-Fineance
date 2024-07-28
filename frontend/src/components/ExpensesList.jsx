@@ -23,7 +23,9 @@ export default function ExpensesList() {
         <form className='list'>
             {expenses.map(expense => (
                 <div className="expense" key={expense._id}>
-                    <div className="image">fwe</div>
+                    <div className="image">
+                        <img src={"/icons/" + expense.category + ".png"} alt="category icon" />
+                    </div>
                     <div className="text">
                         <div className="left">
                             <input
@@ -47,28 +49,30 @@ export default function ExpensesList() {
                             </select>
                         </div>
                         <div className="right">
-                            <div className="amount_input">
-                                <input
-                                    type="number"
-                                    className='amount'
-                                    value={expense.amount}
-                                    onChange={(e) => handleUpdate(e.target.value, 'amount', expense._id)}
-                                />
-                                <span>$</span>
+                            <div className="input_wrapper">
+                                <div className="amount_input">
+                                    <input
+                                        type="number"
+                                        className='amount'
+                                        value={expense.amount}
+                                        onChange={(e) => handleUpdate(e.target.value, 'amount', expense._id)}
+                                    />
+                                    <span>$</span>
+                                </div>
+                                <select
+                                    name="payment"
+                                    value={expense.payment}
+                                    onChange={(e) => handleUpdate(e.target.value, 'payment', expense._id)}
+                                >
+                                    <option disabled value="">Select a Payment Method</option>
+                                    <option value="Credit Card">Credit Card</option>
+                                    <option value="Cash">Cash</option>
+                                    <option value="Bank Transfer">Bank Transfer</option>
+                                </select>
                             </div>
-                            <select
-                                name="payment"
-                                value={expense.payment}
-                                onChange={(e) => handleUpdate(e.target.value, 'payment', expense._id)}
-                            >
-                                <option disabled value="">Select a Payment Method</option>
-                                <option value="Credit Card">Credit Card</option>
-                                <option value="Cash">Cash</option>
-                                <option value="Bank Transfer">Bank Transfer</option>
-                            </select>
+                            <img onClick={() => handleDelete(expense._id)} className='bin_icon' src="/icons/bin.png" alt="bin icon" />
                         </div>
                     </div>
-                    <img onClick={() => handleDelete(expense._id)} className='bin_icon' src="/icons/bin.png" alt="bin icon" />
                 </div>
             ))}
         </form>

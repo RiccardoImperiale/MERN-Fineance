@@ -2,6 +2,7 @@ import '../assets/css/expenses_form.css'
 import { useState } from "react"
 import { useUser } from "@clerk/clerk-react"
 import { useExpenses } from "../contexts/expensesContext"
+import { useNavigate } from 'react-router-dom'
 
 export default function FinancialForm() {
     const [title, setTitle] = useState("")
@@ -11,6 +12,8 @@ export default function FinancialForm() {
     const { addExpense } = useExpenses()
 
     const { user } = useUser()
+
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -29,6 +32,8 @@ export default function FinancialForm() {
         setAmount("")
         setCategory("")
         setPayment("")
+
+        return navigate('/')
     }
 
     return (

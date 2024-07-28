@@ -5,7 +5,6 @@
     .expense {
         display: flex;
         align-items: center;
-        position: relative;
 
         .image {
             min-width: 60px;
@@ -29,8 +28,17 @@
                 color: var(--fin-secondary);
             }
 
+            .right,
+            .left {
+                padding: 0;
+            }
+
 
             .right {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 2rem;
 
                 input,
                 select {
@@ -47,7 +55,6 @@
     input,
     select {
         background-color: transparent;
-        display: block;
         border: none;
         width: 100%;
 
@@ -61,7 +68,6 @@
         font-weight: 600;
         font-size: 1.5rem;
         caret-color: var(--fin-accent);
-        /* width: fit-content; */
     }
 
     select {
@@ -89,9 +95,11 @@
         margin: 0;
     }
 
+
+
     .bin_icon {
-        position: absolute;
-        right: -3.7rem;
+        /* position: absolute; */
+        /* right: -3.7rem; */
         cursor: pointer;
     }
 }
