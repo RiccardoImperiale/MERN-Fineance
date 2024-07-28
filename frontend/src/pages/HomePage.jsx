@@ -2,7 +2,7 @@ import { useUser } from "@clerk/clerk-react"
 import Dashboard from "../components/Dashboard"
 import Welcome from "../components/Welcome"
 
-export default function DashboardPage() {
+export default function HomePage() {
     const { user } = useUser()
     return (
         <div className="home">

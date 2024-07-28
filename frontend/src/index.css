@@ -20,11 +20,13 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--fin-primary);
+  color: white;
 }
 
 button {
-  padding: .8rem 2rem;
+  padding: 1.4rem 2.5rem;
   border: none;
-  border-radius: 2rem;
-  font-size: 1.2rem;
+  border-radius: 5rem;
+  font-size: 1.6rem;
 }

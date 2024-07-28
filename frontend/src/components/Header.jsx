@@ -6,11 +6,15 @@ export default function Header() {
     return (
         <header>
             <nav className="container">
-                <div className="nav_links">
-                    <ul>
-                        <li><NavLink to="/" >Dashboard</NavLink></li>
-                        <li><NavLink to="/expenses" >Expenses</NavLink></li>
-                    </ul>
+                <div className="left">
+
+                    <img src="/img/logo.png" alt="" />
+                    <div className="nav_links">
+                        <ul>
+                            <li><NavLink to="/" >Dashboard</NavLink></li>
+                            <li><NavLink to="/expenses" >Expenses</NavLink></li>
+                        </ul>
+                    </div>
                 </div>
                 <div className="sign_in">
                     <SignedIn>

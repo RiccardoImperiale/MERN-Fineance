@@ -5,10 +5,8 @@ import Welcome from "../components/Welcome"
 export default function WelcomePage() {
     const { user } = useUser()
     return (
-        <div className="homepage">
-            <div className="container">
-                <Welcome />
-            </div>
-        </div>
+        <>
+            <Welcome />
+        </>
     )
 }
