@@ -2,6 +2,7 @@
 
 :root {
   --fin-primary: #4C30F3;
+  --fin-primary-dark: #2a1b81;
   --fin-accent: #5DD5AB;
   --fin-secondary: #9EA0FF;
 }
@@ -10,6 +11,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scrollbar-color: var(--fin-secondary) var(--fin-primary);
 }
 
 .container {
@@ -29,4 +34,15 @@ button {
   border: none;
   border-radius: 5rem;
   font-size: 1.6rem;
+  cursor: pointer;
+  transition: .25s ease;
+
+  &:hover {
+    box-shadow: 0px 10px 10px #3a24b3;
+  }
+}
+
+h2 {
+  font-size: 3.5rem;
+  color: var(--fin-accent);
 }

@@ -3,18 +3,20 @@ import "../assets/css/welcome.css"
 
 export default function Welcome() {
     return (
-        <div className="welcome">
-            <div className="left">
-                <h1>Welcome <br /> To Fineance.</h1>
-                <div className="actions">
-                    <SignedOut>
-                        <SignUpButton mode="modal" />
-                        <SignInButton mode="modal" />
-                    </SignedOut>
+        <div className="container">
+            <div className="welcome">
+                <div className="left">
+                    <h1>Welcome <br /> To Fineance.</h1>
+                    <div className="actions">
+                        <SignedOut>
+                            <SignUpButton mode="modal" />
+                            <SignInButton mode="modal" />
+                        </SignedOut>
+                    </div>
                 </div>
-            </div>
-            <div className="right">
-                <img src="/img/welcome.png" alt="" />
+                <div className="right">
+                    <img src="/img/welcome.png" alt="" />
+                </div>
             </div>
         </div>
     )

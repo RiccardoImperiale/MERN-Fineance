@@ -32,11 +32,11 @@ export default function FinancialForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='expenses_form' onSubmit={handleSubmit}>
             {/* TITLE */}
             <div className="input_group">
                 <label htmlFor="title">Description</label>
-                <input type="text" id="title" placeholder='Enter a small description' name="title" required onChange={(e) => setTitle(e.target.value)} value={title} />
+                <input type="text" id="title" placeholder='Enter a Short Description' name="title" required onChange={(e) => setTitle(e.target.value)} value={title} />
             </div>
             {/* AMOUNT */}
             <div className="input_group">
@@ -68,7 +68,7 @@ export default function FinancialForm() {
             </div>
             <div className="action">
                 <button type="submit" className="button">
-                    <img src="/img/plus-secondary.png" alt="plus icon" />
+                    <img width={20} src="/img/plus.png" alt="plus icon" />
                     <span>Add Expense</span>
                 </button>
             </div>

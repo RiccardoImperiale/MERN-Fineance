@@ -6,9 +6,7 @@ export default function HomePage() {
     const { user } = useUser()
     return (
         <div className="home">
-            <div className="container">
-                {user ? <ExpensesPage /> : <WelcomePage />}
-            </div>
+            {user ? <ExpensesPage /> : <WelcomePage />}
         </div>
     )
 }

@@ -1,0 +1,48 @@
+.list {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+    .expense {
+        display: flex;
+        align-items: center;
+
+        .image {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--fin-secondary);
+            border-radius: 50%;
+        }
+
+        .text {
+            padding: 1.6rem 0;
+            padding-left: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1;
+            border-bottom: 1px solid white;
+
+            h4 {
+                font-weight: 400;
+                color: var(--fin-secondary);
+            }
+
+            /* .left {
+
+            } */
+
+            .right {
+                text-align: end;
+            }
+
+
+        }
+
+    }
+
+    .expense:last-child .text {
+        border-bottom: none;
+    }
+}

@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 
 export default function Header() {
     const { user } = useUser()
+    const linkClass = ({ isActive }) => isActive ? 'current_page' : 'inactive'
+
     return (
         <header>
             <nav className="container">
@@ -14,7 +16,8 @@ export default function Header() {
                     {user && (
                         <div className="nav_links">
                             <ul>
-                                <li><NavLink to="/new" >Add Expense</NavLink></li>
+                                <li><NavLink to="/" className={linkClass}>Dashboard</NavLink></li>
+                                <li><NavLink to="/new" className={linkClass}>Add Expense</NavLink></li>
                             </ul>
                         </div>
                     )}

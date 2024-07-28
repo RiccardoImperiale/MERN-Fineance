@@ -1,0 +1,34 @@
+.dashboard {
+    height: 100vh;
+    background: linear-gradient(90deg, transparent 50%, var(--fin-secondary)0);
+
+    .container {
+        display: flex;
+        height: 100%;
+        padding: 10rem 0;
+    }
+
+    .left,
+    .right {
+        width: 50%;
+    }
+
+    .left {
+        padding-right: 6rem;
+    }
+
+    .right {
+        padding-left: 6rem;
+
+        h2 {
+            color: black;
+        }
+    }
+
+    h2 {
+        margin-bottom: 3rem;
+    }
+
+
+
+}
