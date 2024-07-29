@@ -16,7 +16,7 @@ const mongoURI = process.env.MONGO_URI
 mongoose
     .connect(mongoURI)
     .then(() => console.log('connected to mongoDB'))
-    .catch((err) => console.err('failed to connect to mongoDB', err))
+    .catch((err) => console.error('failed to connect to mongoDB', err))
 
 app.use("/expenses", expensesRouter)
 
