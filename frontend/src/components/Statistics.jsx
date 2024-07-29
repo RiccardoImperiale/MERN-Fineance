@@ -1,6 +1,6 @@
 
-import { useEffect, useState } from 'react';
 import '../assets/css/statistics.css';
+import { useEffect, useState } from 'react';
 import { useExpenses } from '../contexts/expensesContext';
 
 
@@ -14,40 +14,40 @@ export default function Statistics() {
     }, [expenses]);
 
     return (
-        <div className='stats'>
+        <>
+            <div className='stats'>
+                <div className="stat">
+                    <div className="image">
+                        <img src={"/icons/Total.png"} alt="category icon" />
+                    </div>
+                    <div className="text">
+                        <div className="left">
+                            <div className='title'>Total Amount</div>
+                        </div>
+                        <div className="right">
+                            <div className='big_number'>$<span>{totalAmount}</span></div>
+                        </div>
+                    </div>
+                </div>
 
-            <div className="stat">
-                <div className="image">
-                    <img src={"/icons/Total.png"} alt="category icon" />
-                </div>
-                <div className="text">
-                    <div className="left">
-                        <div className='title'>Total Amount</div>
+                <div className="stat last">
+                    <div className="image">
+                        <img src={"/icons/Expenses.png"} alt="category icon" />
                     </div>
-                    <div className="right">
-                        <div className='big_number'>$<span>{totalAmount}</span></div>
+                    <div className="text">
+                        <div className="left">
+                            <div className='title'>Expenses</div>
+                        </div>
+                        <div className="right">
+                            <div className='big_number'><span>{expenses.length}</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="stat last">
-                <div className="image">
-                    <img src={"/icons/Expenses.png"} alt="category icon" />
-                </div>
-                <div className="text">
-                    <div className="left">
-                        <div className='title'>Expenses</div>
-                    </div>
-                    <div className="right">
-                        <div className='big_number'><span>{expenses.length}</span></div>
-                    </div>
-                </div>
+            <div className="illustration">
+                <img className='image' src="/img/stats-long.png" alt="statistics illustration" />
             </div>
-            <div className="filter_bg">
-                <div className="illustration">
-                    <img className='image' src="/img/stats.png" alt="statistics illustration" />
-                </div>
-            </div>
-        </div>
+        </>
     )
 }

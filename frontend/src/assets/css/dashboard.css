@@ -1,25 +1,34 @@
 .dashboard {
-    height: 100vh;
-    /* background: linear-gradient(90deg, transparent 50%, var(--fin-secondary)0); */
-    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+
+    .filter_bg {
+        position: absolute;
+        inset: 0;
+        right: 60%;
+        background-color: var(--fin-secondary);
+        z-index: -1;
+    }
 
     .container {
         display: flex;
-        height: 100%;
-        padding-top: 10rem;
+        flex-direction: row-reverse;
     }
 
-    .left,
-    .right {
-        width: 50%;
+    .dashboard_left,
+    .dashboard_right {
+        padding: 10rem 6rem;
     }
 
-    .left {
-        padding-right: 6rem;
+    .dashboard_left {
+        width: 55%;
     }
 
-    .right {
-        padding-left: 6rem;
+    .dashboard_right {
+        background-color: var(--fin-secondary);
+        width: 45%;
+        min-height: 100vh;
 
         h2 {
             color: var(--fin-accent);
@@ -31,7 +40,4 @@
     h2 {
         margin-bottom: 3rem;
     }
-
-
-
 }

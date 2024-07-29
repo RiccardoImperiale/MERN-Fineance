@@ -44,19 +44,19 @@ header {
                     .current_page {
                         position: relative;
                         color: white;
-
-                        /* &::after {
-                            content: '';
-                            position: absolute;
-                            right: 0;
-                            bottom: -10px;
-                            border-bottom: 1px solid white;
-                            width: 100%;
-                        } */
                     }
 
                     .inactive {
                         color: var(--fin-secondary);
+                    }
+
+                    .stats_current_page {
+                        position: relative;
+                        color: var(--fin-secondary-dark);
+                    }
+
+                    .stats_inactive {
+                        color: black;
                     }
                 }
             }

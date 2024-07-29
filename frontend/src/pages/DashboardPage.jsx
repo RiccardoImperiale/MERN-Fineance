@@ -6,15 +6,16 @@ export default function DashboardPage() {
     return (
         <div className="dashboard">
             <div className="container">
-                <div className="left">
+                <div className="dashboard_left">
                     <h2>Your Expenses.</h2>
                     <ExpensesList />
                 </div>
-                <div className="right">
+                <div className="dashboard_right">
                     <h2>Stats.</h2>
                     <Statistics />
                 </div>
             </div>
+            <div className="filter_bg"></div>
         </div>
     )
 }

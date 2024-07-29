@@ -1,17 +1,14 @@
 .not_found {
-    padding-top: 5rem;
+    padding-top: 15rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 
-    .icon {
-        font-size: 3rem;
-        color: var(--jo-primary);
-    }
-
     h3 {
-        color: var(--jo-secondary);
         margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: 200;
+        color: var(--fin-accent);
     }
 }

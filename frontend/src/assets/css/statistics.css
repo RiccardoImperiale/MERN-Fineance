@@ -63,27 +63,17 @@
         border-bottom: none;
     }
 
-    .filter_bg {
-        background-color: var(--fin-secondary);
-        position: absolute;
-        inset: 0;
-        left: 50%;
-        z-index: -1;
-        overflow: hidden;
+}
 
-        .illustration {
-            position: relative;
-            height: 100%;
-            width: 100%;
-            min-height: 980px;
+.illustration {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
 
-            .image {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-            }
-        }
+    .image {
+        width: 220%;
+        display: block;
+        transform: translateX(3rem);
     }
-
 }
