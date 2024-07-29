@@ -4,7 +4,9 @@ import { useExpenses } from '../contexts/expensesContext';
 
 export default function ExpensesList() {
     const { expenses, updateExpense, deleteExpense } = useExpenses();
-
+    if (!expenses) {
+        console.log('ciao');
+    }
     const handleUpdate = (updatedValue, key, id) => {
         const updatedExpense = expenses.find(exp => exp._id === id);
         const updatedExpenses = {
@@ -18,6 +20,13 @@ export default function ExpensesList() {
         deleteExpense(id);
     };
 
+    if (!expenses || expenses.length === 0) {
+        return (
+            <>
+                <button>Add New Expense</button>
+            </>
+        );
+    }
 
     return (
         <form className='list'>

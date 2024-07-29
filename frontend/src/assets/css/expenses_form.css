@@ -1,5 +1,5 @@
 .expenses_form {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 
     .input_group {
         display: flex;
@@ -8,7 +8,7 @@
         label {
             font-size: 1.6rem;
             font-weight: 600;
-            padding-top: 3rem;
+            padding-top: 2rem;
         }
 
         input,
@@ -48,10 +48,11 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        margin-top: 5rem;
+        margin-top: 3rem;
         margin-bottom: 5rem;
         background-color: black;
         color: white;
+        font-size: 1.4rem;
 
         span {
             padding-right: .5rem;

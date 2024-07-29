@@ -10,7 +10,7 @@ export default function AddExpensePage() {
                     <ExpensesForm />
                 </div>
                 <div className="right">
-                    <img src="/img/form.png" alt="" />
+                    <img src="/img/form.png" alt="illustration" />
                 </div>
             </div>
         </div>
