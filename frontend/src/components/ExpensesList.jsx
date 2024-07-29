@@ -7,14 +7,11 @@ import { Link } from 'react-router-dom';
 
 
 export default function ExpensesList() {
-    const { expenses, updateExpense, deleteExpense } = useExpenses();
+    const { expenses, updateExpense, deleteExpense, loading } = useExpenses();
     const [isModal, setIsModal] = useState(false)
     const [deleteId, setdeleteId] = useState('')
     const [deleteTitle, setdeleteTitle] = useState('')
 
-    if (!expenses) {
-        console.log('ciao');
-    }
     const handleUpdate = (updatedValue, key, id) => {
         const updatedExpense = expenses.find(exp => exp._id === id);
         const updatedExpenses = {
@@ -39,6 +36,10 @@ export default function ExpensesList() {
         setIsModal(false)
     };
 
+    if (loading) {
+        return <img width={250} src="/img/loader.gif" alt="loading gif" />
+    }
+
     if (!expenses || expenses.length === 0) {
         return <Link className='btn btn_white' to='/new' >Add New Expense</Link>
     }
@@ -46,7 +47,7 @@ export default function ExpensesList() {
     return (
         <>
             <form className='list'>
-                {expenses.map(expense => (
+                {(expenses.map(expense => (
                     <div className="expense" key={expense._id}>
                         <div className="image">
                             <img src={"/icons/" + expense.category + ".png"} alt="category icon" />
@@ -99,7 +100,7 @@ export default function ExpensesList() {
                             </div>
                         </div>
                     </div>
-                ))}
+                )))}
             </form>
             <h5 className='edit_message'>
                 Click on a field if you want to edit it.

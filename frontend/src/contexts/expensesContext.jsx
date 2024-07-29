@@ -4,17 +4,22 @@ export const ExpensesContext = createContext(null)
 
 export const ExpensesProvider = ({ children }) => {
     const [expenses, setExpenses] = useState([])
+    const [loading, setLoading] = useState(false);
+
     const { user } = useUser()
     const backendUrl = 'https://fineance-backend.onrender.com'
+
     const fetchExpenses = async () => {
         if (!user) return;
 
-        const res = await fetch(`${backendUrl}/expenses/getAllByUserId/${user.id}`)
+        setLoading(true);
 
+        const res = await fetch(`${backendUrl}/expenses/getAllByUserId/${user.id}`)
         if (res.ok) {
             const allExpenses = await res.json()
             setExpenses(allExpenses)
         }
+        setLoading(false);
     }
 
     useEffect(() => {
@@ -76,7 +81,7 @@ export const ExpensesProvider = ({ children }) => {
     };
 
     return (
-        <ExpensesContext.Provider value={{ expenses, addExpense, updateExpense, deleteExpense }}>
+        <ExpensesContext.Provider value={{ expenses, addExpense, updateExpense, deleteExpense, loading }}>
             {children}
         </ExpensesContext.Provider>
     )
