@@ -7,7 +7,7 @@ export default function NotFound() {
         <div className="not_found container">
             <FiAlertCircle className="icon" />
             <h3>Sorry, page not found...</h3>
-            <Link to="/" className="btn_dark">Go Back Home</Link>
+            <Link to="/" className="btn">Go Back Home</Link>
         </div>
     )
 }

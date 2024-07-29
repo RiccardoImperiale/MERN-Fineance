@@ -1,7 +1,8 @@
 import '../assets/css/dashboard.css'
 import ExpensesList from '../components/ExpensesList'
+import Statistics from '../components/Statistics'
 
-export default function ExpensePage() {
+export default function DashboardPage() {
     return (
         <div className="dashboard">
             <div className="container">
@@ -11,6 +12,7 @@ export default function ExpensePage() {
                 </div>
                 <div className="right">
                     <h2>Stats.</h2>
+                    <Statistics />
                 </div>
             </div>
         </div>

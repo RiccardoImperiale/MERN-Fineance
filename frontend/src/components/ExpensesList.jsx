@@ -1,7 +1,10 @@
 
-import { useState } from 'react';
 import '../assets/css/expenses_list.css';
+import { useState } from 'react';
 import { useExpenses } from '../contexts/expensesContext';
+import DeleteModal from './DeleteModal';
+import { Link } from 'react-router-dom';
+
 
 export default function ExpensesList() {
     const { expenses, updateExpense, deleteExpense } = useExpenses();
@@ -36,14 +39,8 @@ export default function ExpensesList() {
         setIsModal(false)
     };
 
-
-
     if (!expenses || expenses.length === 0) {
-        return (
-            <>
-                <button>Add New Expense</button>
-            </>
-        );
+        return <Link className='btn btn_white' to='/new' >Add New Expense</Link>
     }
 
     return (
@@ -105,16 +102,7 @@ export default function ExpensesList() {
                 ))}
             </form>
 
-            {isModal && <div className="modal">
-                <div className="modal_card">
-                    <h3>Are you shure do you want to delete <span>{deleteTitle}</span>?</h3>
-                    <div className="buttons">
-                        <button className='close_btn' onClick={() => dismissModal()}>X</button>
-                        <button className='delete_btn' onClick={() => handleDelete(deleteId)}>delete</button>
-                    </div>
-                </div>
-                <div className="filter"></div>
-            </div>}
+            {isModal && <DeleteModal handleDelete={() => handleDelete(deleteId)} dismissModal={dismissModal} deleteTitle={deleteTitle} />}
         </>
     );
 }

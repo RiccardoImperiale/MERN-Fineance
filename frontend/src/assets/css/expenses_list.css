@@ -17,9 +17,10 @@
         }
 
         .text {
-            padding: 1.6rem 0;
+            height: 120px;
             padding-left: 2rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid white;
 

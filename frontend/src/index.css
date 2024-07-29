@@ -5,6 +5,8 @@
   --fin-primary-dark: #2a1b81;
   --fin-accent: #5DD5AB;
   --fin-secondary: #9EA0FF;
+  --fin-secondary-dark: #5F6199;
+
 }
 
 * {
@@ -29,17 +31,27 @@ body {
   color: white;
 }
 
-button {
+button,
+.btn {
   padding: 1.4rem 2.5rem;
   border: none;
   border-radius: 5rem;
   font-size: 1.6rem;
   cursor: pointer;
   transition: .25s ease;
+  text-decoration: none;
 
   &:hover {
     box-shadow: 0px 10px 10px #3a24b3;
   }
+}
+
+.btn_white {
+  background-color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: black;
+  font-weight: 600;
 }
 
 h2 {
