@@ -5,11 +5,11 @@ export const ExpensesContext = createContext(null)
 export const ExpensesProvider = ({ children }) => {
     const [expenses, setExpenses] = useState([])
     const { user } = useUser()
-
+    const backendUrl = 'https://fineance-backend.onrender.com'
     const fetchExpenses = async () => {
         if (!user) return;
 
-        const res = await fetch(`http://localhost:3000/expenses/getAllByUserId/${user.id}`)
+        const res = await fetch(`${backendUrl}/expenses/getAllByUserId/${user.id}`)
 
         if (res.ok) {
             const allExpenses = await res.json()
@@ -22,7 +22,7 @@ export const ExpensesProvider = ({ children }) => {
     }, [user])
 
     const addExpense = async (expense) => {
-        const res = await fetch("http://localhost:3000/expenses", {
+        const res = await fetch(`${backendUrl}/expenses`, {
             method: "POST",
             body: JSON.stringify(expense),
             headers: {
@@ -40,7 +40,7 @@ export const ExpensesProvider = ({ children }) => {
     }
 
     const updateExpense = async (updatedExpense) => {
-        const res = await fetch(`http://localhost:3000/expenses/${updatedExpense._id}`, {
+        const res = await fetch(`${backendUrl}/expenses/${updatedExpense._id}`, {
             method: "PUT",
             body: JSON.stringify(updatedExpense),
             headers: {
@@ -60,7 +60,7 @@ export const ExpensesProvider = ({ children }) => {
     };
 
     const deleteExpense = async (id) => {
-        const res = await fetch(`http://localhost:3000/expenses/${id}`, {
+        const res = await fetch(`${backendUrl}/expenses/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
