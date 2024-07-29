@@ -59,8 +59,31 @@
         }
     }
 
-    .stat:last-child .text {
+    .stat.last .text {
         border-bottom: none;
+    }
+
+    .filter_bg {
+        background-color: var(--fin-secondary);
+        position: absolute;
+        inset: 0;
+        left: 50%;
+        z-index: -1;
+        overflow: hidden;
+
+        .illustration {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            min-height: 980px;
+
+            .image {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+        }
     }
 
 }

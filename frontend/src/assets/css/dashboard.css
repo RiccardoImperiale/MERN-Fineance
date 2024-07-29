@@ -1,6 +1,7 @@
 .dashboard {
     height: 100vh;
-    background: linear-gradient(90deg, transparent 50%, var(--fin-secondary)0);
+    /* background: linear-gradient(90deg, transparent 50%, var(--fin-secondary)0); */
+    overflow: hidden;
 
     .container {
         display: flex;
@@ -19,15 +20,6 @@
 
     .right {
         padding-left: 6rem;
-        position: relative;
-        overflow: hidden;
-
-        .illustration {
-            position: absolute;
-            bottom: 3rem;
-            left: 0;
-            width: 110%;
-        }
 
         h2 {
             color: var(--fin-accent);

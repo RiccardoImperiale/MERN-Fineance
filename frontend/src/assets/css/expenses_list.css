@@ -96,11 +96,7 @@
         margin: 0;
     }
 
-
-
     .bin_icon {
-        /* position: absolute; */
-        /* right: -3.7rem; */
         cursor: pointer;
     }
 }
@@ -114,7 +110,6 @@
     gap: 1rem;
     color: var(--fin-accent);
 }
-
 
 .modal {
     position: fixed;
@@ -170,7 +165,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #dbdcff;
+            background: var(--fin-accent);
             box-shadow: 10px 10px 20px #8e90e8,
                 -10px -10px 20px #b4b5ff;
         }
