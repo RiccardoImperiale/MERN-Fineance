@@ -96,8 +96,8 @@ export default function ExpensesList() {
                                         <option value="Bank Transfer">Bank Transfer</option>
                                     </select>
                                 </div>
-                                <img onClick={() => openModal(expense._id, expense.title)} className='bin_icon' src="/icons/bin.png" alt="bin icon" />
                             </div>
+                            <img onClick={() => openModal(expense._id, expense.title)} className='bin_icon' src="/icons/bin-dark.png" alt="bin icon" />
                         </div>
                     </div>
                 )))}

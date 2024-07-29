@@ -23,6 +23,7 @@
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid white;
+            position: relative;
 
             h4 {
                 font-weight: 400;
@@ -95,10 +96,12 @@
         -webkit-appearance: none;
         margin: 0;
     }
+}
 
-    .bin_icon {
-        cursor: pointer;
-    }
+.bin_icon {
+    cursor: pointer;
+    position: absolute;
+    right: -3.5rem;
 }
 
 .edit_message {
