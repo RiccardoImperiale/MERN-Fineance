@@ -13,6 +13,7 @@ export default function DashboardPage() {
                 <div className="right">
                     <h2>Stats.</h2>
                     <Statistics />
+                    <img className='illustration' src="/img/stats.png" alt="statistics illustration" />
                 </div>
             </div>
         </div>

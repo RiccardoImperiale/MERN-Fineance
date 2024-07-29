@@ -101,7 +101,10 @@ export default function ExpensesList() {
                     </div>
                 ))}
             </form>
-
+            <h5 className='edit_message'>
+                Click on a field if you want to edit it.
+                <img src="/icons/Edit.png" alt="edit icon" />
+            </h5>
             {isModal && <DeleteModal handleDelete={() => handleDelete(deleteId)} dismissModal={dismissModal} deleteTitle={deleteTitle} />}
         </>
     );
