@@ -1,5 +1,9 @@
 # Fineance
+### 
+
 ### **Fineance is designed to help you manage and track your expenses.**
+
+In this project, I focused on practicing the MERN stack and testing Render's free deployment option (surprise... It's slow 🤝)
 
 ## ⚙️ Tech Stack
 - React.js
