@@ -10,12 +10,14 @@
     .left {
         padding-top: 10rem;
         padding-left: 5rem;
-        width: 40%;
+        padding-right: 5rem;
+        width: 50%;
         height: 100%;
     }
 
     .right {
-        transform: translate(100px, 0px);
+        width: 50%;
+        /* transform: translate(100px, 0px); */
         height: 95%;
         position: absolute;
         right: 0;
@@ -24,6 +26,7 @@
         img {
             object-fit: cover;
             height: 100%;
+            padding-top: 8rem;
         }
     }
 }
