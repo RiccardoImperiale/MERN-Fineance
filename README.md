@@ -1,4 +1,5 @@
 # Fineance
+### **Fineance is designed to help you manage and track your expenses.**
 
 ## ⚙️ Tech Stack
 - React.js
@@ -8,7 +9,8 @@
 - Clerk (authentication and user management) 
  
 
+[Current Version](https://fineance-frontend.onrender.com/) 
+
 ![alt text](./frontend/public/screen.png)
 
-[Desktop Version](https://fineance-frontend.onrender.com/) 
 ## Thank You 🗿
