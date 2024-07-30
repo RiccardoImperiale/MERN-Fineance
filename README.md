@@ -7,4 +7,4 @@
 - Mongo DB
 - Clerk (authentication and user management) 
 
-![alt text](./public/screen.png)
+![alt text](./frontend/public/screen.png)
