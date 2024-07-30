@@ -72,7 +72,7 @@ export default function FinancialForm() {
                 </select>
             </div>
             <div className="action">
-                <button type="submit" className="button">
+                <button type="submit" className="button btn">
                     <img width={20} src="/img/plus.png" alt="plus icon" />
                     <span>Add Expense</span>
                 </button>

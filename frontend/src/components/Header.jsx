@@ -13,9 +13,7 @@ export default function Header() {
         }
     }
 
-
     const location = useLocation();
-
 
     const logoSrc = location.pathname === '/' && user ? "/img/logo-dark.png" : "/img/logo.png";
 

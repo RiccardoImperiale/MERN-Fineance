@@ -68,3 +68,10 @@ header {
     width: 3rem;
     height: 3rem;
 }
+
+.cl-internal-1yphags>button {
+
+    &:hover {
+        box-shadow: none;
+    }
+}
